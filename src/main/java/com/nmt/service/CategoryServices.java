@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import com.nmt.Entity.Category;
 import com.nmt.Repository.CategoryRepository;
 
-import java.util.List;
 
 @Service
 public class CategoryServices {
@@ -41,11 +40,7 @@ public class CategoryServices {
             .orElseThrow(() -> new RuntimeException("Category not found"));
 
         categoryRepository.delete(category);
-        return new ResponseEntity<>("Category with ID " + cid + " has been deleted.", HttpStatus.OK);
+        return new ResponseEntity<>("Category deleted.", HttpStatus.OK);
     }
 
-    public ResponseEntity<List<Category>> getAllCategories() {
-        List<Category> categories = categoryRepository.findAll();
-        return new ResponseEntity<>(categories, HttpStatus.OK);
-    }
 }

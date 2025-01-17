@@ -1,6 +1,6 @@
 package com.nmt.controller;
 
-import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -27,11 +27,6 @@ public class ProductController {
     @PostMapping("/add")
     public ResponseEntity<Products> addProduct(@RequestBody Products products) {
         return productsServices.addProducts(products);
-    }
-
-    @GetMapping("/all")
-    public ResponseEntity<List<Products>> getAllProducts() {
-        return productsServices.getAllProducts();
     }
 
     @GetMapping("/{pid}")

@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 import com.nmt.Entity.Category;
 import com.nmt.service.CategoryServices;
 
-import java.util.List;
 
 @RequestMapping("/api/categories")
 @RestController
@@ -36,8 +35,4 @@ public class CategoryController {
         return categoryServices.deleteCategories(cid);
     }
 
-    @GetMapping
-    public ResponseEntity<List<Category>> getAllCategories() {
-        return categoryServices.getAllCategories();
-    }
 }
